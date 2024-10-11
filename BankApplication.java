@@ -17,22 +17,16 @@ public class BankApplication {
 
 			int selectNo = scanner.nextInt();
 
-			switch (selectNo) {
-				case 1:
-					CreateAccount.execute(accountArray, scanner);
-					break;
-				case 2:
-					AccountList.execute(accountArray);
-					break;
-				case 3:
-					Deposit.execute(accountArray, scanner);
-					break;
-				case 4:
-					Withdraw.execute(accountArray, scanner);
-					break;
-				case 5:
-					run = false;
-					break;
+			if (selectNo == 1) {
+				CreateAccount.execute(accountArray, scanner);
+			} else if (selectNo == 2) {
+				AccountList.execute(accountArray);
+			} else if (selectNo == 3) {
+				Deposit.execute(accountArray, scanner);
+			} else if (selectNo == 4) {
+				Withdraw.execute(accountArray, scanner);
+			} else if (selectNo == 5) {
+				run = false;
 			}
 		}
 		System.out.println("프로그램 종료");
