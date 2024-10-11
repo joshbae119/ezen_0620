@@ -2,12 +2,12 @@ package exam0620;
 
 public class Account {
 	private String ano;
-	private String name;
+	private String owner;
 	private int balance;
 	
-	public Account(String ano, String name, int balance) {
+	public Account(String ano, String owner, int balance) {
 		this.ano = ano;
-		this.name = name;
+		this.owner = owner;
 		this.balance = balance;
 	}
 	
@@ -17,11 +17,11 @@ public class Account {
 	public void setAno(String ano) {
 		this.ano = ano;
 	}
-	public String getName() {
-		return name;
+	public String getOwner() {
+		return owner;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 	public int getBalance() {
 		return balance;
