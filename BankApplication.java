@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class BankApplication {
 
-	private static Account[] accountArray = new Account[100];
-	private static Scanner scanner = new Scanner(System.in);
-
 	public static void main(String[] args) {
 		boolean run = true;
 		while (run) {
@@ -15,21 +12,22 @@ public class BankApplication {
 			System.out.println("----------------------------------------------------------");
 			System.out.print("선택> ");
 
-			int selectNo = scanner.nextInt();
+			int selectNo = BankService.getScanner().nextInt();
 
 			if (selectNo == 1) {
-				CreateAccount.execute(accountArray, scanner);
+				CreateAccount.execute();
 			} else if (selectNo == 2) {
-				AccountList.execute(accountArray);
+				AccountList.execute();
 			} else if (selectNo == 3) {
-				Deposit.execute(accountArray, scanner);
+				Deposit.execute();
 			} else if (selectNo == 4) {
-				Withdraw.execute(accountArray, scanner);
+				Withdraw.execute();
 			} else if (selectNo == 5) {
 				run = false;
 			}
 		}
 		System.out.println("프로그램 종료");
+		BankService.closeScanner();
 	}
 
 	// Account 클래스는 그대로 유지
