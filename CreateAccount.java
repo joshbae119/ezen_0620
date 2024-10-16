@@ -3,19 +3,19 @@ package exam0620;
 import java.util.Scanner;
 
 public class CreateAccount {
-    public static void execute() {
+    public static void execute(Scanner scanner) {
         System.out.println("--------");
         System.out.println("계좌생성");
         System.out.println("--------");
 
         System.out.print("계좌번호: ");
-        String ano = BankService.getScanner().next();
+        String ano = scanner.nextLine();
 
         System.out.print("계좌주: ");
-        String owner = BankService.getScanner().next();
+        String owner = scanner.nextLine();
 
         System.out.print("초기입금액: ");
-        int balance = BankService.getScanner().nextInt();
+        int balance = Integer.parseInt(scanner.nextLine());
 
         Account newAccount = new Account(ano, owner, balance);
         Account[] accounts = BankService.getAccounts();

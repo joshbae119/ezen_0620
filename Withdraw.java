@@ -1,16 +1,18 @@
 package exam0620;
 
+import java.util.Scanner;
+
 public class Withdraw {
-    public static void execute() {
+    public static void execute(Scanner scanner) {
         System.out.println("--------");
         System.out.println("출금");
         System.out.println("--------");
 
         System.out.print("계좌번호: ");
-        String ano = BankService.getScanner().next();
+        String ano = scanner.nextLine();
 
         System.out.print("출금액: ");
-        int money = BankService.getScanner().nextInt();
+        int money = Integer.parseInt(scanner.nextLine());
 
         Account account = findAccount(ano);
         if (account == null) {
